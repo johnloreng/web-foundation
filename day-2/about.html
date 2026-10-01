@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Quick Notes - About</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+      <h1>About QuickNotes</h1>
+    </header>
+ 
+    <main>
+      <section>
+        <h2>How to use QuickNotes</h2>
+        <ol>
+          <li>Keyboard Shortcut: Press the Globe/Function key + Q simultaneously from any screen to open a Quick Note window</li>
+          <li>Hot Corners: Configure your Mac's Hot Corners via System Settings so that moving your mouse cursor to a designated corner of your desktop triggers a Quick Note.</li>
+          <li>Highlight and Add: Right-click highlighted text in any app or browser and select Add to Quick Note</li>
+        </ol>
+        <h3>Features</h3>
+        <ul class="features">
+          <li>Universal Access</li>
+          <li>Rich Content Support</li>
+          <li>Activity Highlights</li>
+        </ul>
+      </section>
+      <section id="keyboard-shortcuts">
+        <h2>Keyboard Shortcuts</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Shortcut</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><kbd>🌐</kbd> + <kbd>Q</kbd> (or <kbd>fn</kbd> + <kbd>Q</kbd>)</td>
+              <td>Open a new Quick Note</td>
+            </tr>
+            <tr>
+              <td><kbd>⌘</kbd> + <kbd>W</kbd></td>
+              <td>Close the Quick Note window</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section id="feedback-form">
+        <form id="feedback-form">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+          <button type="submit">Submit Feedback</button>
+        </form>
+      </section>
+    </main>
+ 
+    <footer>
+      <p>&copy; 2026 QuickNotes. Built during Web Foundations.</p>
+    </footer>
+  </body>
+</html>
