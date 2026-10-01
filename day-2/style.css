@@ -124,6 +124,17 @@ footer {
   #note-form {
     flex-direction: column;
   }
+
+  #feedback-form button[type="submit"],
+  #feedback-form button {
+    width: 100%;
+  }
+
+  th,
+  td {
+    padding: 10px 8px;
+    font-size: 0.9rem;
+  }
 }
 
 /* 8. Features list laid out with CSS Grid as responsive cards */
@@ -155,26 +166,118 @@ footer {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Navigation bar layout with Flexbox */
-nav ul {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  list-style: none;
-  padding: 0;
-  margin: 0 0 16px 0;
+/* 9. Keyboard shortcuts table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
+th,
+td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+  background-color: #f8fafc;
+  color: #475569;
   font-weight: 600;
-  padding: 6px 12px;
-  border-radius: 4px;
-  transition: background-color 0.2s ease, text-decoration 0.2s ease;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid #cbd5e1;
 }
 
-nav a:hover {
-  background-color: rgba(255, 255, 255, 0.25);
-  text-decoration: underline;
+tbody tr:hover {
+  background-color: #f8fafc;
 }
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Keyboard keys */
+kbd {
+  display: inline-block;
+  padding: 2px 7px;
+  font-size: 0.85rem;
+  font-family: inherit;
+  color: #1e293b;
+  background-color: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-bottom: 2px solid #94a3b8;
+  border-radius: 5px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+/* 10. Feedback form and submit button */
+#feedback-form form,
+form#feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#feedback-form label {
+  font-weight: 600;
+  color: #334155;
+  font-size: 0.95rem;
+}
+
+#feedback-form input[type="text"],
+#feedback-form input[type="email"],
+#feedback-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font-family: inherit;
+  font-size: 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #222;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#feedback-form input[type="text"]:focus,
+#feedback-form input[type="email"]:focus,
+#feedback-form textarea:focus {
+  outline: none;
+  border-color: #0ba184;
+  box-shadow: 0 0 0 3px rgba(11, 161, 132, 0.2);
+}
+
+#feedback-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+#feedback-form button[type="submit"],
+#feedback-form button {
+  align-self: flex-start;
+  margin-top: 6px;
+  padding: 11px 22px;
+  background-color: #0ba184;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(11, 161, 132, 0.2);
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+#feedback-form button[type="submit"]:hover,
+#feedback-form button:hover {
+  background-color: #088a70;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(11, 161, 132, 0.25);
+}
+
+#feedback-form button[type="submit"]:active,
+#feedback-form button:active {
+  transform: translateY(0);
+}
+
