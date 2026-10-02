@@ -1,4 +1,4 @@
-/* 1. Reset: predictable sizing and no default body margin */
+/* 1. Reset and base styles */
 *,
 *::before,
 *::after {
@@ -10,7 +10,7 @@ body {
   font-family: "Segoe UI", Arial, sans-serif;
   background-color: #f4f6f8;
   color: #222;
-  line-height: 1.5;
+  line-height: 1.6;
 }
  
 /* 2. Header */
@@ -18,41 +18,37 @@ header {
   background-color: #8e0000;
   color: white;
   text-align: center;
-  padding: 24px 16px;
+  padding: 24px 16px 16px;
 }
-
+ 
 header h1 {
-  margin: 0 0 8px 0;
+  margin: 0;
 }
-
-/* Nav links in a row with Flexbox */
-nav ul {
+ 
+/* 3. Navigation with Flexbox */
+nav {
   display: flex;
   justify-content: center;
   gap: 16px;
-  list-style: none;
-  padding: 0;
-  margin: 0 0 16px 0;
+  margin-top: 12px;
 }
-
+ 
 nav a {
   color: white;
   text-decoration: none;
-  font-weight: 600;
   padding: 6px 12px;
-  border-radius: 4px;
-  transition: background-color 0.2s ease, text-decoration 0.2s ease;
-}
-
-nav a:hover {
-  background-color: rgba(255, 255, 255, 0.25);
-  text-decoration: underline;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
 }
  
-/* 3. Centre the main content and limit its width */
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+ 
+/* 4. Main content and section cards */
 main {
-  max-width: 640px;
-  margin: 24px auto;   /* auto left/right margins centre a block */
+  max-width: 760px;
+  margin: 24px auto;
   padding: 0 16px;
 }
  
@@ -64,27 +60,69 @@ section {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
  
-/* 4. Form layout with Flexbox */
-#note-form {
+h2,
+h3 {
+  color: #8e0000;
+  margin-top: 0;
+}
+ 
+/* 5. Features as a responsive grid of cards */
+.features {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+ 
+.features li {
+  background-color: #e6f6f1;
+  border-left: 4px solid #0ba184;
+  padding: 12px;
+  border-radius: 6px;
+}
+ 
+/* 6. Shortcuts table */
+table {
+  width: 100%;
+  border-collapse: collapse; /* merge double borders into one */
+}
+ 
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  text-align: left;
+}
+ 
+th {
+  background-color: #f0f0f0;
+}
+ 
+/* 7. Forms */
+form {
   display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 6px;
 }
  
-#note-form label {
-  width: 100%;          /* label on its own line */
-  font-weight: bold;
-}
- 
-#note-input {
-  flex: 1;
+input,
+textarea {
+  width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 6px;
-  font-size: 1rem;
+  font: inherit; /* use the page font instead of the browser default */
+}
+ 
+input:focus,
+textarea:focus {
+  outline: 2px solid #0ba184;
+  border-color: #0ba184;
 }
  
 button {
+  align-self: flex-start;
   background-color: #0ba184;
   color: white;
   border: none;
@@ -92,192 +130,32 @@ button {
   border-radius: 6px;
   font-size: 1rem;
   cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
  
 button:hover {
   background-color: #088a70;
+  transform: translateY(-2px);
 }
  
-/* 5. Notes list */
-#notes-list {
-  list-style: none;     /* remove bullet points */
-  padding: 0;
-}
- 
-.note {
-  background-color: #fffbe6;
-  border-left: 4px solid #0ba184;
-  padding: 12px 16px;
-  margin-bottom: 10px;
-  border-radius: 6px;
-}
- 
-/* 6. Footer */
+/* 8. Footer */
 footer {
   text-align: center;
   color: #777;
   padding: 16px;
 }
  
-/* 7. Phones */
+/* 9. Small screens */
 @media (max-width: 600px) {
-  #note-form {
-    flex-direction: column;
+  header {
+    padding: 16px 12px 12px;
   }
-
-  #feedback-form button[type="submit"],
-  #feedback-form button {
-    width: 100%;
+ 
+  header h1 {
+    font-size: 1.6rem;
   }
-
-  th,
-  td {
-    padding: 10px 8px;
-    font-size: 0.9rem;
+ 
+  section {
+    padding: 16px;
   }
 }
-
-/* 8. Features list laid out with CSS Grid as responsive cards */
-.features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 16px;
-  list-style: none;
-  padding: 0;
-  margin: 16px 0;
-}
-
-.features li {
-  background-color: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  padding: 16px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.features li:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* 9. Keyboard shortcuts table */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 16px;
-}
-
-th,
-td {
-  padding: 12px 16px;
-  text-align: left;
-  border-bottom: 1px solid #e2e8f0;
-}
-
-th {
-  background-color: #f8fafc;
-  color: #475569;
-  font-weight: 600;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  border-bottom: 2px solid #cbd5e1;
-}
-
-tbody tr:hover {
-  background-color: #f8fafc;
-}
-
-tbody tr:last-child td {
-  border-bottom: none;
-}
-
-/* Keyboard keys */
-kbd {
-  display: inline-block;
-  padding: 2px 7px;
-  font-size: 0.85rem;
-  font-family: inherit;
-  color: #1e293b;
-  background-color: #f1f5f9;
-  border: 1px solid #cbd5e1;
-  border-bottom: 2px solid #94a3b8;
-  border-radius: 5px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
-}
-
-/* 10. Feedback form and submit button */
-#feedback-form form,
-form#feedback-form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-#feedback-form label {
-  font-weight: 600;
-  color: #334155;
-  font-size: 0.95rem;
-}
-
-#feedback-form input[type="text"],
-#feedback-form input[type="email"],
-#feedback-form textarea {
-  width: 100%;
-  padding: 10px 12px;
-  font-family: inherit;
-  font-size: 1rem;
-  border: 1px solid #cbd5e1;
-  border-radius: 6px;
-  background-color: #ffffff;
-  color: #222;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-#feedback-form input[type="text"]:focus,
-#feedback-form input[type="email"]:focus,
-#feedback-form textarea:focus {
-  outline: none;
-  border-color: #0ba184;
-  box-shadow: 0 0 0 3px rgba(11, 161, 132, 0.2);
-}
-
-#feedback-form textarea {
-  resize: vertical;
-  min-height: 100px;
-}
-
-#feedback-form button[type="submit"],
-#feedback-form button {
-  align-self: flex-start;
-  margin-top: 6px;
-  padding: 11px 22px;
-  background-color: #0ba184;
-  color: white;
-  font-size: 1rem;
-  font-weight: 600;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  box-shadow: 0 2px 4px rgba(11, 161, 132, 0.2);
-  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
-}
-
-#feedback-form button[type="submit"]:hover,
-#feedback-form button:hover {
-  background-color: #088a70;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(11, 161, 132, 0.25);
-}
-
-#feedback-form button[type="submit"]:active,
-#feedback-form button:active {
-  transform: translateY(0);
-}
-
