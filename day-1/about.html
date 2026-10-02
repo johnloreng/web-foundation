@@ -3,36 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quick Notes</title>
+    <title>About QuickNotes</title>
   </head>
   <body>
     <header>
+      <h1>QuickNotes</h1>
+      <p>Capture ideas before they disappear.</p>
       <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-        </ul>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
       </nav>
     </header>
  
     <main>
+      <h2>About QuickNotes</h2>
+      <p>
+        QuickNotes is a simple web app for writing down ideas and reminders
+        in seconds. It was built step by step during the Web Foundations course.
+      </p>
+ 
       <section>
-        <h2>About QuickNotes</h2>
-        <p>How to use QuickNotes</p>
+        <h3>How to use QuickNotes</h3>
         <ol>
-          <li>Keyboard Shortcut: Press the Globe/Function key + Q simultaneously from any screen to open a Quick Note window</li>
-          <li>Hot Corners: Configure your Mac's Hot Corners via System Settings so that moving your mouse cursor to a designated corner of your desktop triggers a Quick Note.</li>
-          <li>Highlight and Add: Right-click highlighted text in any app or browser and select Add to Quick Note</li>
+          <li>Type your note in the "New note" box.</li>
+          <li>Press Enter or click "Add Note".</li>
+          <li>Click "Delete" on any note you no longer need.</li>
         </ol>
-        <p>Fatures:</p>
+      </section>
+ 
+      <section>
+        <h3>Features</h3>
         <ul>
-          <li>Universal Access</li>
-          <li>Rich Content Support</li>
-          <li>Activity Highlights</li>
+          <li>Add notes instantly</li>
+          <li>Works on phones and laptops</li>
+          <li>Notes are saved in your browser</li>
         </ul>
       </section>
-      <section id="keyboard-shortcuts">
-        <h2>Keyboard Shortcuts</h2>
+ 
+      <section>
+        <h3>Keyboard shortcuts</h3>
         <table>
           <thead>
             <tr>
@@ -42,25 +51,30 @@
           </thead>
           <tbody>
             <tr>
-              <td><kbd>🌐</kbd> + <kbd>Q</kbd> (or <kbd>fn</kbd> + <kbd>Q</kbd>)</td>
-              <td>Open a new Quick Note</td>
+              <td>Enter</td>
+              <td>Add the note you typed</td>
             </tr>
             <tr>
-              <td><kbd>⌘</kbd> + <kbd>W</kbd></td>
-              <td>Close the Quick Note window</td>
+              <td>Tab</td>
+              <td>Move to the next button or box</td>
             </tr>
           </tbody>
         </table>
       </section>
-      <section id="feedback-form">
+ 
+      <section>
+        <h3>Send feedback</h3>
         <form id="feedback-form">
-          <label for="name">Name:</label>
+          <label for="name">Your name</label>
           <input type="text" id="name" name="name" required />
-          <label for="email">Email:</label>
+ 
+          <label for="email">Email</label>
           <input type="email" id="email" name="email" required />
-          <label for="message">Message:</label>
+ 
+          <label for="message">Message</label>
           <textarea id="message" name="message" rows="4" required></textarea>
-          <button type="submit">Submit Feedback</button>
+ 
+          <button type="submit">Send feedback</button>
         </form>
       </section>
     </main>
